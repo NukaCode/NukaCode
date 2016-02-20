@@ -57,6 +57,7 @@
             "php artisan optimize"
         ]
     },
+    "minimum-stability": "dev",
     "config": {
         "preferred-install": "dist"
     }
