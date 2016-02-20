@@ -11,7 +11,8 @@
         "nukacode/core": "~2.2",
         "nukacode/menu": "~1.0",
         "adamwathan/bootforms": "^0.8.0",
-        "rap2hpoutre/laravel-log-viewer": "^0.4.2"
+        "rap2hpoutre/laravel-log-viewer": "^0.4.2",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

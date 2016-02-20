@@ -216,6 +216,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        // Extras
+        'HTML'      => Collective\Html\HtmlFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'BootForm'  => AdamWathan\BootForms\Facades\BootForm::class,
+        'Str'       => Illuminate\Support\Str::class,
+
     ],
 
 ];

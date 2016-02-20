@@ -10,7 +10,7 @@
     @if (app()->environment() == 'dev')
       <a class="navbar-brand" href="{!! route('home') !!}">Development Site</a>
     @else
-      <a class="navbar-brand" href="{!! route('home') !!}">Scrubscribers</a>
+      <a class="navbar-brand" href="{!! route('home') !!}">{{ env('APP_NAME') }}</a>
     @endif
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
