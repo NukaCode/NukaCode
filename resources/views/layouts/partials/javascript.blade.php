@@ -67,15 +67,10 @@
       $(this).removeData('bs.modal');
     });
 
-    var mainError = {!! (Session::has('error') ? json_encode(Session::get('error')) : 0) !!};
-    var mainErrors = {!! (Session::has('errors') ? json_encode(implode('<br />', Session::get('errors')->all())) : 0) !!};
-    var mainMessage = {!! (Session::has('message') ? json_encode(Session::get('message')) : 0) !!};
-    var mainWarning = {!! (Session::has('warning') ? json_encode(Session::get('warning')) : 0) !!};
-    var mainTwitch = {!! (Session::has('twitch') ? json_encode(Session::get('twitch')) : 0) !!};
-    var mainSteam = {!! (Session::has('steam') ? json_encode(Session::get('steam')) : 0) !!};
-    var mainRockstar = {!! (Session::has('rockstar') ? json_encode(Session::get('rockstar')) : 0) !!};
-    var mainYoutube = {!! (Session::has('youtube') ? json_encode(Session::get('youtube')) : 0) !!};
-    var mainSlack = {!! (Session::has('slack') ? json_encode(Session::get('slack')) : 0) !!};
+    var mainError = {!! (session()->has('error') ? json_encode(session()->get('error')) : 0) !!};
+    var mainErrors = {!! (session()->has('errors') ? '"There was a problem with your request.<br />"+'. json_encode(implode('<br />', session()->get('errors')->all())) : 0) !!};
+    var mainMessage = {!! (session()->has('message') ? json_encode(session()->get('message')) : 0) !!};
+    var mainWarning = {!! (session()->has('warning') ? json_encode(session()->get('warning')) : 0) !!};
 
     $.notifyDefaults({
       placement: {
@@ -118,56 +113,6 @@
       }, {
         // settings
         type: 'info'
-      });
-    }
-
-    if (mainTwitch != 0) {
-      $.notify({
-        message: mainTwitch,
-        icon: 'fa fa-twitch'
-      }, {
-        // settings
-        type: 'twitch'
-      });
-    }
-
-    if (mainSteam != 0) {
-      $.notify({
-        message: mainSteam,
-        icon: 'fa fa-steam'
-      }, {
-        // settings
-        type: 'steam'
-      });
-    }
-
-    if (mainRockstar != 0) {
-      $.notify({
-        message: mainRockstar,
-        icon: 'fa fa-star'
-      }, {
-        // settings
-        type: 'rockstar'
-      });
-    }
-
-    if (mainYoutube != 0) {
-      $.notify({
-        message: mainYoutube,
-        icon: 'fa fa-youtube-play'
-      }, {
-        // settings
-        type: 'youtube'
-      });
-    }
-
-    if (mainSlack != 0) {
-      $.notify({
-        message: mainSlack,
-        icon: 'fa fa-slack'
-      }, {
-        // settings
-        type: 'slack'
       });
     }
 
