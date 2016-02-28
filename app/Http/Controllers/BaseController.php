@@ -17,28 +17,10 @@ abstract class BaseController extends CoreBaseController
     public function __construct()
     {
         parent::__construct();
-
-        $this->setLeftMenu();
-        $this->setRightMenu();
     }
 
     protected function setPageTitle($pageTitle)
     {
         $this->setViewData(compact('pageTitle'));
-    }
-
-    private function setLeftMenu()
-    {
-        $leftMenu = \Menu::getMenu('leftMenu');
-
-        $leftMenu->link('home', function (Link $link) {
-            $link->name = 'Home';
-            $link->url  = route('home');
-        });
-    }
-
-    private function setRightMenu()
-    {
-        $rightMenu = \Menu::getMenu('rightMenu');
     }
 }
