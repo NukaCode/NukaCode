@@ -1,5 +1,38 @@
 <?php
 
+if (! function_exists('start_Debug')) {
+    /**
+     * Start a debugbar measurement
+     *
+     * @param string $name
+     * @param string $label
+     *
+     * @return mixed
+     */
+    function start_debug($name, $label)
+    {
+        if (app()->environment('local') || Input::get('debug') == true) {
+            start_measure($name, $label);
+        }
+    }
+}
+
+if (! function_exists('stop_debug')) {
+    /**
+     * Stop a debugbar measurement
+     *
+     * @param string $name
+     *
+     * @return mixed
+     */
+    function stop_debug($name)
+    {
+        if (app()->environment('local') || Input::get('debug') == true) {
+            stop_measure($name);
+        }
+    }
+}
+
 if (! function_exists('cache')) {
     /**
      * Get / set the specified cache value.
