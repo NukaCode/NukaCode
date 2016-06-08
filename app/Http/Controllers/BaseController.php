@@ -16,11 +16,19 @@ abstract class BaseController extends CoreBaseController
 
     public function __construct()
     {
+        $this->addDefaultJavascript();
+
         parent::__construct();
     }
 
     protected function setPageTitle($pageTitle)
     {
         $this->setViewData(compact('pageTitle'));
+    }
+
+    protected function addDefaultJavascript()
+    {
+        $this->setJavascriptData('csrfToken', csrf_token());
+        $this->setJavascriptData('activeUser', auth()->user());
     }
 }
